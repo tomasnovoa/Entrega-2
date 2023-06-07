@@ -11,6 +11,10 @@ public class PlayerMove : MonoBehaviour
     public Transform spawnPoint;  // Punto de origen para instanciar los proyectiles
     public float spawnInterval = 1f;  // Intervalo de tiempo entre cada instancia de proyectil
     private float spawnTimer = 0f;
+    public int Balas;
+    
+   public bool Cargada;
+   
 
     private void Start()
     {
@@ -51,25 +55,49 @@ public class PlayerMove : MonoBehaviour
         // Verificar si es momento de instanciar un proyectil
         if (spawnTimer >= spawnInterval)
         {
-            SpawnProjectile();
+            Shoot();
             spawnTimer = 0f;  // Reiniciar el temporizador
         }
 
 
+        Recargar();
+        
+
 
     }
 
-    private void SpawnProjectile()
+    private void Shoot()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Cargada == true)
         {
             GameObject projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);// Instanciar un proyectil en el spawnPoint
+            Balas -= 1;
+        }
+       
+    }
+
+    void Recargar()
+    {
+        if(Balas >= 10 && (Input.GetKey(KeyCode.R)))
+        {
+            Cargada = true;
+            
+        }
+        
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Municion"))
+        {
+            Balas = 10;
         }
 
-        
-
-        
     }
+
+
+
 
 
 
