@@ -12,33 +12,43 @@ public class PlayerMove : MonoBehaviour
     public float spawnInterval = 1f;  // Intervalo de tiempo entre cada instancia de proyectil
     private float spawnTimer = 0f;
     public int Balas;
+    public int tiros;
+    public Animator animator;
+    public Animator animatorRevolver;
+    private UiManager uiManager;
+    public float lastShootTime;
+    public float cooldownTime;
+
     
-   public bool Cargada;
+    public bool Cargada;
    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        uiManager = FindObjectOfType<UiManager>();
     }
 
     private void Update()
     {
         // Obtener la entrada del usuario en el eje horizontal y vertical
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
-       
         float moveVertical = Input.GetAxisRaw("Vertical");
 
         // Calcular la dirección de movimiento
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
         if (moveHorizontal < 0)
         {
             transform.Translate(Vector3.right * moveHorizontal * speed * Time.deltaTime);
-            transform.localScale = moveHorizontal > 0 ? Vector3.one : new Vector3(-1, 1, 1); ;
+            transform.localScale = new Vector3(1, 1, 1);
+            animator.Play("PlayerCaminando");
         }
-        if (moveHorizontal > 0)
+        else if (moveHorizontal > 0)
         {
             transform.Translate(Vector3.right * moveHorizontal * speed * Time.deltaTime);
-            transform.localScale = moveHorizontal > 0 ? Vector3.one : new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
+            animator.Play("PlayerCaminando");
         }
 
         // Normalizar el vector de movimiento para mantener una velocidad constante en diagonal
@@ -52,28 +62,35 @@ public class PlayerMove : MonoBehaviour
 
         spawnTimer += Time.deltaTime;
 
-        // Verificar si es momento de instanciar un proyectil
-        if (spawnTimer >= spawnInterval)
+        if (Input.GetMouseButtonDown(0) && Cargada)
         {
             Shoot();
-            spawnTimer = 0f;  // Reiniciar el temporizador
+        }
+
+        if ( tiros <= 0)
+        {
+            Cargada = false;
         }
 
 
         Recargar();
-        
 
+
+        uiManager.SetRecarga(Balas);
+        uiManager.SetTiros(tiros);
 
     }
 
     private void Shoot()
     {
-        if (Input.GetMouseButton(0) && Cargada == true)
+        if (Time.time >= lastShootTime + cooldownTime)
         {
-            GameObject projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);// Instanciar un proyectil en el spawnPoint
-            Balas -= 1;
+            animatorRevolver.Play("TiroRevolver");
+            GameObject projectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+            tiros -= 1;
+            lastShootTime = Time.time;
         }
-       
+
     }
 
     void Recargar()
@@ -81,19 +98,25 @@ public class PlayerMove : MonoBehaviour
         if(Balas >= 10 && (Input.GetKey(KeyCode.R)))
         {
             Cargada = true;
+            Balas = 0;
+            tiros += 10;
+            animator.Play("PlayerRecargando");
+            animatorRevolver.Play("RecargaRevolver");
+
             
         }
         
-
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Municion"))
+        if (collision.gameObject.CompareTag("ammo"))
         {
-            Balas = 10;
+            Balas += 10;
+            Destroy(collision.gameObject);
         }
-
+        
     }
 
 

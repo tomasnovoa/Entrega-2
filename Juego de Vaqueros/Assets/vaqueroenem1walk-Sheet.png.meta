@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 3455373fb5ff1de4f9327ea7ea5f46c4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 3195
+        y: 90
+        width: 450
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766195b3cf92c7d4295fd9835d67f884
+      internalID: -1746937440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 90
+        width: 446
+        height: 750
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e2569336f53b14e834ab5e380acef5
+      internalID: 179470293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 4129
+        y: 86
+        width: 476
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb4945118cf03f44802a540b94fe5ef
+      internalID: -1608083597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 6075
+        y: 90
+        width: 450
+        height: 750
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9835d2769eb7ed2498ae18da16c2cdd0
+      internalID: -1768994880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 7035
+        y: 98
+        width: 450
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a91c0ab0b04f1408ef1eb18c1945ea
+      internalID: 522228287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 86
+        width: 477
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3f81ce04eee2947b90c4f9d26b7f40
+      internalID: -161237876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 90
+        width: 450
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c808e9ace420f41ab40c51decad117
+      internalID: -249775345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaqueroenem1walk-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 5115
+        y: 75
+        width: 450
+        height: 716
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d320237dc28471e4a9ae469eb7fffcbd
+      internalID: -1410153516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      vaqueroenem1walk-Sheet_0: 1124251032
+      vaqueroenem1walk-Sheet_1: -1746937440
+      vaqueroenem1walk-Sheet_10: -1106313684
+      vaqueroenem1walk-Sheet_11: 676742092
+      vaqueroenem1walk-Sheet_12: -249775345
+      vaqueroenem1walk-Sheet_13: 1008860350
+      vaqueroenem1walk-Sheet_14: -1410153516
+      vaqueroenem1walk-Sheet_15: 962882689
+      vaqueroenem1walk-Sheet_16: 1755015942
+      vaqueroenem1walk-Sheet_17: -35379260
+      vaqueroenem1walk-Sheet_18: -810115946
+      vaqueroenem1walk-Sheet_19: 1434612815
+      vaqueroenem1walk-Sheet_2: -106176912
+      vaqueroenem1walk-Sheet_20: -561138368
+      vaqueroenem1walk-Sheet_21: -1329301850
+      vaqueroenem1walk-Sheet_22: 883733996
+      vaqueroenem1walk-Sheet_23: 1410877150
+      vaqueroenem1walk-Sheet_24: -775952081
+      vaqueroenem1walk-Sheet_25: -1807704649
+      vaqueroenem1walk-Sheet_26: -2046633674
+      vaqueroenem1walk-Sheet_27: -650297609
+      vaqueroenem1walk-Sheet_28: 1525257514
+      vaqueroenem1walk-Sheet_29: 1524622584
+      vaqueroenem1walk-Sheet_3: 1936974175
+      vaqueroenem1walk-Sheet_30: 214280306
+      vaqueroenem1walk-Sheet_31: -1788105368
+      vaqueroenem1walk-Sheet_32: -1657171705
+      vaqueroenem1walk-Sheet_33: -1796776943
+      vaqueroenem1walk-Sheet_34: -532156657
+      vaqueroenem1walk-Sheet_35: 1774114386
+      vaqueroenem1walk-Sheet_36: 1273748919
+      vaqueroenem1walk-Sheet_37: 1730452928
+      vaqueroenem1walk-Sheet_38: 1680628380
+      vaqueroenem1walk-Sheet_39: 952558588
+      vaqueroenem1walk-Sheet_4: 179470293
+      vaqueroenem1walk-Sheet_40: 1179239395
+      vaqueroenem1walk-Sheet_41: -1710927445
+      vaqueroenem1walk-Sheet_5: -1608083597
+      vaqueroenem1walk-Sheet_6: -1260879650
+      vaqueroenem1walk-Sheet_7: -1768994880
+      vaqueroenem1walk-Sheet_8: 522228287
+      vaqueroenem1walk-Sheet_9: -161237876
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

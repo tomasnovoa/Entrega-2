@@ -10,6 +10,9 @@ public class AtaqueEnemigo : MonoBehaviour
     public float shootingRange = 5f;         // Rango de disparo
     public float shootingInterval = 2f;       // Intervalo de tiempo entre disparos
     private float lastShootTime;              // Tiempo del último disparo
+    public Animator animatorGun;
+    
+
 
     private void Start()
     {
@@ -33,8 +36,9 @@ public class AtaqueEnemigo : MonoBehaviour
     private void Shoot()
     {
         // Crear un proyectil a partir del prefab
+        animatorGun.Play("RevolverEnemigoTiro");
         GameObject balita = Instantiate(bala, shootingPoint.position, Quaternion.identity);
-
+        
         
     }
 }

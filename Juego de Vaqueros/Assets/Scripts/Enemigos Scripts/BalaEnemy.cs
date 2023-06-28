@@ -5,53 +5,49 @@ using UnityEngine;
 public class BalaEnemy : MonoBehaviour
 {
     public float speed = 10f;  // Velocidad del proyectil
-    private Transform Enemy;  // Referencia al transform del jugador
+    private Transform player;  // Referencia al transform del jugador
     public float DestroyDelay = 3;
     private Rigidbody2D rb;
 
     private void Start()
     {
-        DestroyProjectile(3f);
-        rb = GetComponent<Rigidbody2D>();
+        DestroyProjectile(DestroyDelay);
+        GameObject playerObject = GameObject.Find("Player");
 
-        // Buscar el transform del jugador por su nombre
-        GameObject EnemyObject = GameObject.Find("Enemy");
-
-        if (EnemyObject != null)
+        if (playerObject != null)
         {
-             Enemy = EnemyObject.transform;
-        }
-        else
-        {
-            Debug.LogError("Enemy");
+            player = playerObject.transform;
         }
 
-
-        // Verificar si se encontró el transform del jugador
-        if (Enemy != null)
+        // Determinar la dirección y escala del proyectil al instanciarlo
+        if (player.position.x > transform.position.x)
         {
-            // Calcular la dirección del movimiento en base a la escala del jugador
-            Vector2 movement = Vector2.right;  // Dirección predeterminada
-
-            if (Enemy.localScale.x < 0)
-            {
-                // Jugador mira hacia la izquierda, invertir la dirección del movimiento
-                movement = Vector2.left;
-            }
-
-            // Mover el proyectil en la dirección calculada
-            rb.velocity = movement * speed;
+            transform.localScale = new Vector3(1, 1, 1);
+            rb.velocity = Vector2.right * speed;
+        }
+        else if (player.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            rb.velocity = Vector2.left * speed;
         }
     }
 
-    private void Update()
+    private void Awake()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void DestroyProjectile(float DestroyDelay)
+    private void DestroyProjectile(float destroyDelay)
     {
         // Destruir el proyectil después de un cierto tiempo (delay)
-        Destroy(gameObject, DestroyDelay);
+        Destroy(gameObject, destroyDelay);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Obstaculo"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
