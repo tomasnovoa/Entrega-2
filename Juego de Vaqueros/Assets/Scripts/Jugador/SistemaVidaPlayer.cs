@@ -5,11 +5,12 @@ using UnityEngine;
 public class SistemaVidaPlayer : MonoBehaviour
 {
     public int vida;
-    public int tiempomuerte = 3;
+    
     public Animator animatorhit;
+    public GameObject negro;
     void Start()
     {
-        
+        negro.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,13 +21,14 @@ public class SistemaVidaPlayer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (vida <= 0)
         {
             animatorhit.Play("PlayerMuerte");
-            Destroy(gameObject,tiempomuerte);
+
+            negro.SetActive(true);
         }
     }
 }
